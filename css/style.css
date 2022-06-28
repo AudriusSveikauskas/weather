@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;0,900;1,200;1,400;1,700;1,900&display=swap');
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: #dbe4ff;
+    background-image: url("../img/animated-shape.svg"), linear-gradient(to right bottom, #364fc7, #596dd7, #798be5, #99a9f3, #bac8ff);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+h3 {
+    line-height: 12.8rem;
+    font-size: 7rem;
+}
+
+h4 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 3.6rem;
+}
+
+hr {
+    border: .1rem solid #dbe4ff;
+    grid-column: 4 span;
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 46rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: .2rem;
+    margin-bottom: 3rem;
+}
+
+.search-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    column-gap: .6rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-input, .search-input::placeholder, .search-button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-input {
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    background-color: #dbe4ff;
+    color: #364fc7;
+    border: none;
+    text-transform: uppercase;
+}
+
+.search-input::placeholder {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #748ffc;
+    text-transform: none;
+}
+
+.search-button {
+    background-color: #364fc7;
+    color: #dbe4ff;
+    border: none;
+    cursor: pointer;
+}
+
+.link-back, .link-back a {
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    align-self: flex-end;
+}
+
+.link-back a {
+    color: #364fc7;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.donation {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5rem;
+}
+
+.modal-background {
+    background-color: rgba(54, 79, 199, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.modal-message {
+    width: 80rem;
+    height: 30rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #364fc7;
+    border-radius: .6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1.5fr 8fr .5fr 4fr;
+    padding: 2rem;
+    color: #dbe4ff;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+.modal-close-button {
+    width: 4rem;
+    position: fixed;
+    top: -5rem;
+    right: -5rem;
+    cursor: pointer;
+}
+
+.icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+}
+
+.weather-date {
+    grid-column: 4 span;
+    font-size: 1.2rem;
+}
+
+.weather-location {
+    grid-column: 4 span;
+    font-size: 2rem;
+}
+
+.weather-temperature {
+    display: flex;
+}
+
+.weather-icon {
+    width: 6.4rem;
+    height: 6.4rem;
+}
+
+.weather-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-box-txt {
+    font-size: 2rem;
+}
