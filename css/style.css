@@ -128,6 +128,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100vh;
+    display: none;
 }
 
 .modal-message {
@@ -161,6 +162,10 @@ hr {
     display: inline-block;
 }
 
+.font-size-20 {
+    font-size: 2rem;
+}
+
 .weather-date {
     grid-column: 4 span;
     font-size: 1.2rem;
@@ -189,4 +194,95 @@ hr {
 
 .weather-box-txt {
     font-size: 2rem;
+}
+
+.screen-not-valid-wrapper {
+    background-color: #364fc7;
+    color: #91a7ff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.screen-not-valid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 3rem;
+    padding: 3rem;
+}
+
+@media screen and (max-width: 1390px) {
+    .donation {
+        right: 4rem;
+    }
+}
+
+@media screen and (max-width: 1360px) {
+    .donation {
+        right: 3rem;
+    }
+}
+
+@media screen and (max-width: 1330px) {
+    .donation {
+        right: 2rem;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .donation {
+        right: 1rem;
+    }
+}
+@media screen and (max-width: 1270px) {
+    .donation {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .donation {
+        right: -1rem;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .donation {
+        right: -2rem;
+    }
+
+    .donation-img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .donation {
+        right: -3rem;
+    }
+
+    .donation-img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .donation {
+        right: -5rem;
+    }
+
+    .donation-img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .screen-not-valid-wrapper {
+        display: block;
+    }
 }

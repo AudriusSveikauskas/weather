@@ -22,47 +22,47 @@
 </div>
 
 
-    <div class="modal-background">
-        <div class="modal-message">
-            <div class="weather-date">2022-06-28 21:44</div>
-            <div class="weather-location">Vilnius, LT</div>
-            <div class="weather-temperature">
-                <img class="weather-icon" src="https://cdn.weatherapi.com/weather/64x64/day/113.png">
-                <h3>24&#176;</h3>
-            </div>
-            <div class="weather-box">
-                <h6>Debesuotumas:</h6>
-                <h4>40%</h4>
-            </div>
-            <div class="weather-box">
-                <h6>Krituliai:</h6>
-                <h4>0</h4>
-            </div>
-            <div class="weather-box">
-                <h6>Debesuotumas:</h6>
-                <h4>40%</h4>
-            </div>
-            <hr>
-            <div class="weather-box">
-                <h6>Jutiminė temperatūra</h6>
-                <p><span class="weather-box-txt">24%</span></p>
-            </div>
-            <div class="weather-box">
-                <h6>Vėjas</h6>
-                <p><span class="weather-box-txt">4.12</span>km/h</p>
-            </div>
-            <div class="weather-box">
-                <h6>Slėgis</h6>
-                <p><span class="weather-box-txt">1008</span>hPa</p>
-            </div>
-            <div class="weather-box">
-                <h6>Drėgmė</h6>
-                <p><span class="weather-box-txt">69</span>%</p>
-            </div>
-
-            <img src="img/close-button.svg" class="modal-close-button">
+<div class="modal-background">
+    <div class="modal-message">
+        <div class="weather-date" id="localtime"></div>
+        <div class="weather-location" id="name-region"></div>
+        <div class="weather-temperature">
+            <img class="weather-icon" id="icon" src="">
+            <h3 id="temp_c"></h3>
         </div>
+        <div class="weather-box">
+            <h6>Debesuotumas:</h6>
+            <h4 id="cloud"></h4>
+        </div>
+        <div class="weather-box">
+            <h6>Krituliai:</h6>
+            <h4 id="precip_mm"></h4>
+        </div>
+        <div class="weather-box">
+            <h6>Matomumas:</h6>
+            <h4 id="vis_km"></h4>
+        </div>
+        <hr>
+        <div class="weather-box">
+            <h6>Jutiminė temperatūra</h6>
+            <p><span class="weather-box-txt" id="feelslike_c"></span></p>
+        </div>
+        <div class="weather-box">
+            <h6>Vėjas</h6>
+            <p><span class="weather-box-txt" id="wind_kph"></span> km/h</p>
+        </div>
+        <div class="weather-box">
+            <h6>Slėgis</h6>
+            <p><span class="weather-box-txt" id="pressure_mb"></span> hPa</p>
+        </div>
+        <div class="weather-box">
+            <h6>Drėgmė</h6>
+            <p><span class="weather-box-txt" id="humidity"></span>%</p>
+        </div>
+
+        <img src="img/close-button.svg" class="modal-close-button">
     </div>
+</div>
 
 
 <div class="donation">
@@ -70,6 +70,11 @@
         <img class="donation-img" src="img/beer.png" alt="Buy Me a Beer">
     </a>
 </div>
+
+<div class="screen-not-valid-wrapper">
+    <div class="screen-not-valid">Atsiprašome, įrenginio ekrano plotis turi būti ne mažiau 980px!</div>
+</div>
+
 
 </body>
 </html>
