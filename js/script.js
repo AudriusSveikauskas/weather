@@ -16,14 +16,48 @@ MODAL_CLOSE_BUTTON.addEventListener("click", () => {
 
 SEARCH_BUTTON.addEventListener("click", () => {
   const response = `https://api.weatherapi.com/v1/${WEATHER_TYPE}.${RESPONSE_FORMAT}?key=${API_KEY}&q=${SEARCH_INPUT.value}&aqi=yes`;
-    getWeather(response);
+  getWeather(response);
   MODAL.style.display = "block";
 });
 
 function getWeather(response) {
-    fetch(response)
-        .then(weather => weather.json())
-        .then(weather => {
-            console.log(weather)
-        })
+  fetch(response)
+    .then((weather) => weather.json())
+    .then((weather) => {
+      setWeather(weather);
+    });
+}
+
+function setWeather(weather) {
+  document.getElementById(
+    "localtime"
+  ).textContent = `${weather.location.localtime}`;
+  document.getElementById(
+    "name-region"
+  ).textContent = `${weather.location.name} (${weather.location.region})`;
+  document
+    .getElementById("icon")
+    .setAttribute("src", `${weather.current.condition.icon}`);
+  document.getElementById("temp_c").textContent = `${Math.round(
+    weather.current.temp_c
+  )}º`;
+  document.getElementById("cloud").textContent = `${weather.current.cloud}%`;
+  document.getElementById(
+    "precip_mm"
+  ).innerHTML = `${weather.current.precip_mm}<span class="font-size-20"> mm</span>`;
+  document.getElementById(
+    "vis_km"
+  ).innerHTML = `${weather.current.vis_km}<span class="font-size-20"> km</span>`;
+  document.getElementById(
+    "feelslike_c"
+  ).textContent = `${weather.current.feelslike_c}º`;
+  document.getElementById(
+    "wind_kph"
+  ).textContent = `${weather.current.wind_kph}`;
+  document.getElementById(
+    "pressure_mb"
+  ).textContent = `${weather.current.pressure_mb}`;
+  document.getElementById(
+    "humidity"
+  ).textContent = `${weather.current.humidity}`;
 }
