@@ -1,31 +1,77 @@
 "use strict";
 
-const API_KEY = "5d7a4f39ff5d41baa6293953222806";
-const URL = "https://api.weatherapi.com/v1/";
+const WEATHER_API_KEY = "5d7a4f39ff5d41baa6293953222806";
+const WEATHER_API_URL = "https://api.weatherapi.com/v1/";
 const WEATHER_TYPE = "current";
-const RESPONSE_FORMAT = "json";
+const WEATHER_RESPONSE_FORMAT = "json";
+
+const CITY_API_KEY = "kyFAFVdlnH5DBbc+lTriRA==FlAZJ6XvDPIcA2ae";
+const CITY_API_URL = "https://api.api-ninjas.com/v1/city?name=";
+const CITY_LIMIT = 10;
 
 const MODAL = document.querySelector(".modal-background");
 const MODAL_CLOSE_BUTTON = document.querySelector(".modal-close-button");
 const SEARCH_INPUT = document.querySelector(".search-input");
 const SEARCH_BUTTON = document.querySelector(".search-button");
+const CITIES_DATALIST = document.getElementById("city-list");
+
+const aaa = CITIES_DATALIST.querySelectorAll("option");
+aaa.forEach((e) => {
+  console.log(e.textContent);
+});
 
 MODAL_CLOSE_BUTTON.addEventListener("click", () => {
   MODAL.style.display = "none";
 });
 
 SEARCH_BUTTON.addEventListener("click", () => {
-  const response = `https://api.weatherapi.com/v1/${WEATHER_TYPE}.${RESPONSE_FORMAT}?key=${API_KEY}&q=${SEARCH_INPUT.value}&aqi=yes`;
-  getWeather(response);
+  const request = `${WEATHER_API_URL}${WEATHER_TYPE}.${WEATHER_RESPONSE_FORMAT}?key=${WEATHER_API_KEY}&q=${SEARCH_INPUT.value}&aqi=yes`;
+  getWeather(request);
   MODAL.style.display = "block";
 });
 
-function getWeather(response) {
-  fetch(response)
+SEARCH_INPUT.addEventListener("input", () => {
+  const request = `${CITY_API_URL}${SEARCH_INPUT.value}&limit=${CITY_LIMIT}`;
+  if (SEARCH_INPUT.value.length > 3) {
+    getCities(request);
+  }
+});
+
+function getWeather(request) {
+  fetch(request)
     .then((weather) => weather.json())
     .then((weather) => {
       setWeather(weather);
     });
+}
+
+function getCities(request) {
+  fetch(request, {
+    method: "GET",
+    headers: {
+      "X-Api-Key": CITY_API_KEY,
+    },
+    contentType: "application/json",
+  })
+    .then((cities) => cities.json())
+    .then((cities) => {
+      fillDatalist(cities);
+      console.log(cities);
+    });
+}
+
+function fillDatalist(cities) {
+  clearDatalist();
+  cities.map((city) => {
+    let option = document.createElement("option");
+    option.textContent = `${city.name} (${city.country})`;
+    CITIES_DATALIST.append(option);
+    console.log(CITIES_DATALIST);
+  });
+}
+
+function clearDatalist() {
+  CITIES_DATALIST.innerHTML = "";
 }
 
 function setWeather(weather) {

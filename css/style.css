@@ -216,6 +216,14 @@ hr {
     padding: 3rem;
 }
 
+.copyright {
+    position: fixed;
+    bottom: 1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+}
+
 @media screen and (max-width: 1390px) {
     .donation {
         right: 4rem;

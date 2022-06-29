@@ -14,10 +14,11 @@
 <div class="container">
     <h1 class="title">Orų prognozė</h1>
     <div class="search-box">
-        <input class="search-input" type="text" placeholder="Įrašykite miesto pavadinimą...">
+        <input class="search-input" type="text" placeholder="Įrašykite miesto pavadinimą..." list="city-list">
         <button class="search-button">OK</button>
     </div>
-    <div class="link-back">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+    <div class="link-back">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank">WeatherAPI.com</a>
+        & <a href="https://api-ninjas.com/api/city" title="City API" target="_blank">Api-Ninjas.com</a>
     </div>
 </div>
 
@@ -64,7 +65,6 @@
     </div>
 </div>
 
-
 <div class="donation">
     <a href="https://gogetfunding.com/audrius/" target="_blank">
         <img class="donation-img" src="img/beer.png" alt="Buy Me a Beer">
@@ -75,6 +75,9 @@
     <div class="screen-not-valid">Atsiprašome, įrenginio ekrano plotis turi būti ne mažiau 980px!</div>
 </div>
 
+<datalist id="city-list"></datalist>
+
+<div class="copyright">© 2022 Audrius Šveikauskas</div>
 
 </body>
 </html>
