@@ -247,6 +247,7 @@ hr {
         right: 1rem;
     }
 }
+
 @media screen and (max-width: 1270px) {
     .donation {
         right: 0;

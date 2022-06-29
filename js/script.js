@@ -15,11 +15,6 @@ const SEARCH_INPUT = document.querySelector(".search-input");
 const SEARCH_BUTTON = document.querySelector(".search-button");
 const CITIES_DATALIST = document.getElementById("city-list");
 
-const aaa = CITIES_DATALIST.querySelectorAll("option");
-aaa.forEach((e) => {
-  console.log(e.textContent);
-});
-
 MODAL_CLOSE_BUTTON.addEventListener("click", () => {
   MODAL.style.display = "none";
 });
@@ -56,7 +51,6 @@ function getCities(request) {
     .then((cities) => cities.json())
     .then((cities) => {
       fillDatalist(cities);
-      console.log(cities);
     });
 }
 
@@ -66,7 +60,6 @@ function fillDatalist(cities) {
     let option = document.createElement("option");
     option.textContent = `${city.name} (${city.country})`;
     CITIES_DATALIST.append(option);
-    console.log(CITIES_DATALIST);
   });
 }
 
